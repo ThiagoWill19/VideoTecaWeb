@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head lang="pt-br">
+<meta charset="UTF-8">
+<title>VideoTeca</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+	<header>
+		<!-- As a link -->
+		<nav class="navbar navbar-light bg-light">
+  			<span class="navbar-brand mb-0 h1" style="font-weight: bold;"><a href="/filmes" style="text-decoration: none; color: black;">VideoTeca</a></span>
+  			
+		</nav>
+	</header>
+	<section>
+		<div class="container" style=" width: 60%; padding-bottom: 30px; ">
+			
+			<nav aria-label="breadcrumb">
+ 				<ol class="breadcrumb"  style="background-color: white;">
+   	 				<li class="breadcrumb-item" aria-current="page"><a href="/filmes">Filmes</a></li>
+   	 				<li class="breadcrumb-item" aria-current="page"><a th:href="${(#mvc.url('FC#procurarPorId').arg(0, filme.id)).build()}">Filme</a></li>
+   	 				<li class="breadcrumb-item active" aria-current="page">Editar Filme</li>
+   	 				
+  				</ol>
+			</nav>
+			<div>
+				<th:block th:include="menssagemValidacao"></th:block>
+				<form method="post">
+					<div class="form-group">
+							<input type="text" class="form-control" name="titulo" th:value="${filme.titulo}"> 
+					</div>
+					<div class="form-group">
+							<input type="text" class="form-control" name="direcao" th:value="${filme.direcao}">
+					</div>
+					<div class="form-group">
+							<input type="text" class="form-control" name="protagonista" th:value="${filme.protagonista}">
+					</div>
+					<div class="form-group">
+							<input type="text" class="form-control" name="genero" th:value="${filme.genero}">
+					</div>
+					<div class="form-group">
+							<input type="number" class="form-control" name="classIndic" th:value="${filme.classIndic}">
+					</div>
+					<div class="form-group">
+							<input type="number" class="form-control" name="tempo" th:value="${filme.tempo}">
+					</div>
+					<div class="form-group">
+							<input type="number" class="form-control" name="ano" th:value="${filme.ano}">
+					</div>
+					<small class="form-text text-muted">(*) Campo Obrigatório.</small>
+					<button type="submit" class="btn btn-primary" style="margin-top: 10px;">Alterar</button>
+					<a href="/filmes" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+					
+					
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
