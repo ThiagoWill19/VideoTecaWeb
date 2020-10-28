@@ -2,7 +2,7 @@ package com.thiagowill.videoteca.domain;
 
 import java.io.Serializable;
 
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,6 +30,8 @@ public class Filme implements Serializable {
 	private String ano;
 	@Lob
 	private byte[] capa;
+	@Column(name = "linkVideo")
+	private String idLinkYoutube;
 	
 	
 	User user;
@@ -51,11 +53,6 @@ public class Filme implements Serializable {
 		this.ano = ano;
 		this.capa = capa;
 	}
-
-
-
-
-
 
 
 	public int getId() {
@@ -128,6 +125,14 @@ public class Filme implements Serializable {
 
 	public void setCapa(byte[] capa) {
 		this.capa = capa;
+	}
+
+	public String getIdLinkYoutube() {
+		return idLinkYoutube;
+	}
+
+	public void setIdLinkYoutube(String idLinkYoutube) {
+		this.idLinkYoutube = idLinkYoutube;
 	}
 	
 	

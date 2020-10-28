@@ -89,10 +89,17 @@ public class FilmeControler{
 	}
 	
 	@RequestMapping(value = "/editarfilme/{id}", method = RequestMethod.POST)
-	public String editarFilme(@Valid Filme filme,BindingResult result, RedirectAttributes attributes ) {
+	public String editarFilme(@Valid Filme filme, @RequestParam("fileFilme") MultipartFile file, BindingResult result, RedirectAttributes attributes ) {
 		if(result.hasErrors()) {
 			attributes.addFlashAttribute("message", "Verifique se os campos obrigatórios foram preenchidos!");
 			return "redirect:/editarfilme";
+		}
+		
+		try {
+			if(!file.isEmpty())filme.setCapa(file.getBytes());
+			else filme.setCapa(service.buscar(filme.getId()).getCapa());
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		service.save(filme);
 		return "redirect:/filmes";

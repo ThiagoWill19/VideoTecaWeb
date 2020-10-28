@@ -14,8 +14,9 @@
 	<header>
 		<!-- As a link -->
 		<nav class="navbar navbar-dark bg-dark">
-			<span class="navbar-brand mb-0 h1" style="font-weight: bold;"><a
-				href="/filmes" style="text-decoration: none; color: white;">VideoTeca</a></span>
+			<span class="navbar-brand mb-0 h1" style="font-weight: bold;">
+			<a href="/filmes" style="text-decoration: none; color: white;">VideoTeca</a>
+			</span>
 		</nav>
 	</header>
 
@@ -23,47 +24,59 @@
 
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb" style="background-color: white;">
-				<li class="breadcrumb-item" aria-current="page"><a
-					href="/filmes">Filmes</a></li>
+				<li class="breadcrumb-item" aria-current="page">
+				<a href="/filmes">Filmes</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Filme</li>
 			</ol>
 		</nav>
-
-		<div class="media">
+		<div class="row">
 			
-				<img class="mr-5" alt="Imagem da capa" th:src="|/imagem/${filme.id}|"
-					height="300px" width="250px">
-			
-			<div class="media-body">
-				<h1 class="card-title"
-					style="font-weight: bold; margin-bottom: 20px">
-					<span th:text="${filme.titulo}"></span>
-				</h1>
-				<p class="card-subtitle text-muted">
-					<i class="material-icons">movie</i> <span
-						th:text="${filme.direcao}"></span> <br> <i
-						class="material-icons">recent_actors</i> <span
-						th:text="${filme.protagonista}"></span> <br> <i
-						class="material-icons">style</i> <span th:text="${filme.genero}"></span>
-					<br> <i class="material-icons">report</i> <span
-						th:text="${filme.classIndic}"></span> + <br> <i
-						class="material-icons">hourglass_full</i> <span
-						th:text="${filme.tempo}"></span> min. <br> <i
-						class="material-icons">date_range</i> <span th:text="${filme.ano}"></span>
-				</p>
-				<nav>
+			<div class="col-md-12 col-lg-8">
+				<div class="media">
 
-					<a
-						th:href="${(#mvc.url('FC#formularioEditarFilme').arg(0, filme.id)).build()}"
-						class="btn btn-primary" role="button"
-						style="margin-top: 20px; padding: 3px;">Editar</a> <a
-						th:href="${(#mvc.url('FC#deletarFilme').arg(0, filme.id)).build()}"
-						class="btn btn-danger" role="button"
-						style="margin-top: 20px; padding: 3px;">Remover</a>
+					<img class="mr-5" alt="Imagem da capa" th:src="|/imagem/${filme.id}|" height="300px" width="250px">
 
-				</nav>
+					<div class="media-body">
+						<h1 class="card-title" style="font-weight: bold; margin-bottom: 20px">
+						<span th:text="${filme.titulo}"></span>
+						</h1>
+						<p class="card-subtitle text-muted">
+					 		<i class="material-icons">movie</i>
+					 		<span th:text="${filme.direcao}"></span> <br>
+							<i class="material-icons">recent_actors</i> 
+					 		<span th:text="${filme.protagonista}"></span> <br> 
+					 		<i	class="material-icons">style</i> 
+					 		<span th:text="${filme.genero}"></span> <br> 
+					 		<i class="material-icons">report</i>
+					 		<span th:text="${filme.classIndic}"></span> + <br> 
+					 		<i class="material-icons">hourglass_full</i> 
+					 		<span th:text="${filme.tempo}"></span> min. <br> 
+					 		<i class="material-icons">date_range</i> 
+					 		<span th:text="${filme.ano}"></span>
+						</p>
+						<nav class="d-flex justify-content-center">
+
+							<a th:href="${(#mvc.url('FC#formularioEditarFilme').arg(0, filme.id)).build()}" class="btn btn-primary mr-3 w-25" role="button"
+								style="margin-top: 20px; padding: 3px;">Editar</a> 
+							<a th:href="${(#mvc.url('FC#deletarFilme').arg(0, filme.id)).build()}" class="btn btn-danger w-25" role="button"
+								style="margin-top: 20px; padding: 3px;" onclick="return confirm('Remover este filme ?');">Remover</a>
+
+						</nav>
+					</div>
+				</div>
 			</div>
+			
+			<div class="col-md-12 col-lg-4">
+				<div>
+					<p>
+						<label for="video"><h4>Trailer do filme</h4></label>
+						<iframe id="video" width="350" height="240" th:src="|https://www.youtube.com/embed/${filme.idLinkYoutube}|"></iframe>
+					</p>
+				</div>
+			</div>
+		
 		</div>
-	</div>	
+		
+	</div>
 </body>
 </html>
