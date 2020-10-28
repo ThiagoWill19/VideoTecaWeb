@@ -10,7 +10,7 @@
 <body>
 	<header>
 		<!-- As a link -->
-		<nav class="navbar navbar-light bg-light">
+		<nav class="navbar navbar-dark bg-dark">
   			<span class="navbar-brand mb-0 h1" style="font-weight: bold;">VideoTeca</span>
   			<a href="/novofilme" class="btn btn-primary" hole="button">Novo Filme</a>
 		</nav>
@@ -24,12 +24,12 @@
   				</ol>
 			</nav>
 			
-			<nav>
+			<div>
 				<form method="post" class="form-inline">
-					<input class="input-group-text"  type="text" name="titulo" placeholder="Procurar por título">
+					<input class="form-control"  type="text" name="titulo" placeholder="Procurar por título">
 					<button class="btn btn-outline-dark" type="submit" style="margin: 5px;">Ir</button>
 				</form>
-			</nav>
+			</div>
 			
 			<div class="card" style="margin-top: 20px" th:each="filme : ${Filmes}">
   				<div class="card-body">
