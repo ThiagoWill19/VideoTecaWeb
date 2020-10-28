@@ -1,0 +1,11 @@
+C:\Users\thiago\Documents\workspace-spring-tool-suite-4-4.3.2.RELEASE\VideoTeca\src\main\java\com\thiagowill\videoteca\domain\Filme.java
+C:\Users\thiago\Documents\workspace-spring-tool-suite-4-4.3.2.RELEASE\VideoTeca\src\main\java\com\thiagowill\videoteca\repositories\FilmeRepository.java
+C:\Users\thiago\Documents\workspace-spring-tool-suite-4-4.3.2.RELEASE\VideoTeca\src\main\java\com\thiagowill\videoteca\repositories\UserRepository.java
+C:\Users\thiago\Documents\workspace-spring-tool-suite-4-4.3.2.RELEASE\VideoTeca\src\main\java\com\thiagowill\videoteca\VideoTecaApplication.java
+C:\Users\thiago\Documents\workspace-spring-tool-suite-4-4.3.2.RELEASE\VideoTeca\src\main\java\com\thiagowill\videoteca\resources\FilmeControler.java
+C:\Users\thiago\Documents\workspace-spring-tool-suite-4-4.3.2.RELEASE\VideoTeca\src\main\java\com\thiagowill\videoteca\resources\UserResource.java
+C:\Users\thiago\Documents\workspace-spring-tool-suite-4-4.3.2.RELEASE\VideoTeca\src\main\java\com\thiagowill\videoteca\services\FilmeService.java
+C:\Users\thiago\Documents\workspace-spring-tool-suite-4-4.3.2.RELEASE\VideoTeca\src\main\java\com\thiagowill\videoteca\domain\User.java
+C:\Users\thiago\Documents\workspace-spring-tool-suite-4-4.3.2.RELEASE\VideoTeca\src\main\java\com\thiagowill\videoteca\resources\exceptions\ResourceExceptionHandler.java
+C:\Users\thiago\Documents\workspace-spring-tool-suite-4-4.3.2.RELEASE\VideoTeca\src\main\java\com\thiagowill\videoteca\resources\exceptions\StandardError.java
+C:\Users\thiago\Documents\workspace-spring-tool-suite-4-4.3.2.RELEASE\VideoTeca\src\main\java\com\thiagowill\videoteca\services\exceptions\ObjectNotFoundException.java

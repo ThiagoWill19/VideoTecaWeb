@@ -27,7 +27,7 @@
 			
 			<div>
 				<th:block th:include="menssagemValidacao"></th:block>
-				<form method="post">
+				<form method="post" action="/novofilme" enctype="multipart/form-data">
 					<div class="form-group">
 							<input type="text" class="form-control" name="titulo" placeholder="Título *">
 					</div>
@@ -48,6 +48,10 @@
 					</div>
 					<div class="form-group">
 							<input type="number" class="form-control" name="ano" placeholder="Ano ">
+					</div>
+					<div class="form-group">
+							<label for="capa">Capa do filme</label>
+							<input type="file" class="form-control" id="capa" name="fileFilme" accept=".png, .jpeg, .jpg">
 					</div>
 					<small class="form-text text-muted">(*) Campo Obrigatório.</small>
 					<button type="submit" class="btn btn-primary" style="margin-top: 10px;">Cadastrar</button>

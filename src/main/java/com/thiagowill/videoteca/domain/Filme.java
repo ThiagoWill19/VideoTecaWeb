@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.validation.constraints.NotBlank;
 
 
@@ -20,13 +21,15 @@ public class Filme implements Serializable {
 	int id;
 	
 	@NotBlank
-	String titulo;
-	String direcao;
-	String protagonista;
-	String genero;
-	String classIndic;
-	String tempo;
-	String ano;
+	private String titulo;
+	private String direcao;
+	private String protagonista;
+	private String genero;
+	private String classIndic;
+	private String tempo;
+	private String ano;
+	@Lob
+	private byte[] capa;
 	
 	
 	User user;
@@ -34,11 +37,9 @@ public class Filme implements Serializable {
 	public Filme() {
 		
 	}
-	
-	
 
-	public Filme(int id, String titulo, String direcao, String protagonista, String genero, String classIndic,
-			String tempo, String ano) {
+	public Filme(int id, @NotBlank String titulo, String direcao, String protagonista, String genero, String classIndic,
+			String tempo, String ano, byte[] capa) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -48,7 +49,12 @@ public class Filme implements Serializable {
 		this.classIndic = classIndic;
 		this.tempo = tempo;
 		this.ano = ano;
+		this.capa = capa;
 	}
+
+
+
+
 
 
 
@@ -115,6 +121,16 @@ public class Filme implements Serializable {
 	public void setAno(String ano) {
 		this.ano = ano;
 	}
+
+	public byte[] getCapa() {
+		return capa;
+	}
+
+	public void setCapa(byte[] capa) {
+		this.capa = capa;
+	}
+	
+	
 	
 	
 }

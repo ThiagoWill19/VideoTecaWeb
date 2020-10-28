@@ -1,0 +1,11 @@
+com\thiagowill\videoteca\services\exceptions\ObjectNotFoundException.class
+com\thiagowill\videoteca\VideoTecaApplication.class
+com\thiagowill\videoteca\repositories\UserRepository.class
+com\thiagowill\videoteca\domain\Filme.class
+com\thiagowill\videoteca\repositories\FilmeRepository.class
+com\thiagowill\videoteca\services\FilmeService.class
+com\thiagowill\videoteca\domain\User.class
+com\thiagowill\videoteca\resources\exceptions\StandardError.class
+com\thiagowill\videoteca\resources\UserResource.class
+com\thiagowill\videoteca\resources\FilmeControler.class
+com\thiagowill\videoteca\resources\exceptions\ResourceExceptionHandler.class

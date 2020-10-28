@@ -40,18 +40,7 @@ public class FilmeService {
 	}
 	
 	public List<Filme> procurarPorTitulo(String titulo) {
-		
-		List<Filme> listAll = buscarTodos();
-		if(titulo.isEmpty()) return listAll;
-		List<Filme> listaFiltrada = new ArrayList<Filme>();
-		for(Filme f : listAll) {
-			if(f.getTitulo().equals(titulo)) {
-				listaFiltrada.add(f);
-				return listaFiltrada;
-			}
-			
-		}
-		return listAll;
+		return fr.findByTituloIgnoreCaseContaining(titulo);
 	}
 	
 	
